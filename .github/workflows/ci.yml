@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install modules
+      run: yarn
+
+    - name: Check linting
+      run: yarn lint
+
+    - name: Build typescript
+      run: yarn build
+
+    - name: Remove dist (to test `tsx`)
+      run: rm -rf ./dist
+
+    - name: Test
+      run: yarn test --coverage
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        directory: ./coverage/
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+        path_to_write_report: ./coverage/codecov_report.gz
