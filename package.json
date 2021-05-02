@@ -1,6 +1,6 @@
 {
   "name": "@react-native-seoul/masonry-list",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "React Native Masonry List for Pinterest like UI implemented just like the [FlatList].",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
