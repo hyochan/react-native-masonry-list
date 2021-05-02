@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering should render without crashing 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+    ]
+  }
+  onScroll={[Function]}
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+  removeClippedSubviews={true}
+  renderItem={[Function]}
+  scrollEventThrottle={16}
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTRefreshControl />
+  <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 0.5,
+          }
+        }
+      >
+        <View />
+        <View />
+        <View />
+        <View />
+        <View />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 0.5,
+          }
+        }
+      >
+        <View />
+        <View />
+        <View />
+        <View />
+        <View />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

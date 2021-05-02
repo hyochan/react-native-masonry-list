@@ -63,10 +63,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
   return (
     <ScrollView
       {...props}
-      style={[
-        {alignSelf: 'stretch'},
-        style,
-      ]}
+      style={[{alignSelf: 'stretch'}, style]}
       removeClippedSubviews={true}
       refreshControl={
         <RefreshControl

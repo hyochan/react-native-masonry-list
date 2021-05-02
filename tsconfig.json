@@ -21,5 +21,12 @@
     "node_modules",
     "**/*.test.tsx",
     "**/*.spec.ts"
-  ]
+  ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    }
+  }
 }
