@@ -21,6 +21,10 @@
 yarn add @react-native-seoul/masonry-list
 ```
 
+```tsx
+import MasonryList from '@react-native-seoul/masonry-list'
+```
+
 ## Preview
 
 | 2-columns | 3-columns | 4-columns |
@@ -28,6 +32,10 @@ yarn add @react-native-seoul/masonry-list
 |<img src="https://user-images.githubusercontent.com/27461460/116809803-f170e680-ab7a-11eb-8f16-e28a3ab0c741.gif" width=200/>|<img src="https://user-images.githubusercontent.com/27461460/116815966-08bfcc00-ab9b-11eb-9b9f-5928484217d9.gif" width=200/>|<img src="https://user-images.githubusercontent.com/27461460/116815949-f6459280-ab9a-11eb-8434-85f3cc834202.gif" width=200/>|
 
 > You can use as many columns as you want. It is flexible!
+
+## YouTube
+
+[See how to use it](https://www.youtube.com/watch?v=QxSKAcKKW_Q)
 
 ## Description
 
@@ -98,6 +106,23 @@ numColumns?: number;
   onEndReached={() => loadNext(ITEM_CNT)}
 />
 ```
+
+
+## Run Example
+1. Clone the repository.
+
+    ```
+    git clone https://github.com/hyochan/react-native-masonry-list.git
+    ```
+    
+2. Navigate to example project
+
+    ```
+    cd RNMasonryExample
+    ```
+
+3. Install packages and run it as you do in `react-native` project.
+
 
 ## LICENSE
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhyochan%2Freact-native-masonry-list.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhyochan%2Freact-native-masonry-list?ref=badge_large)
