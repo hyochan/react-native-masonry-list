@@ -103,5 +103,22 @@ numColumns?: number;
 />
 ```
 
+
+## Run Example
+1. Clone the repository.
+
+    ```
+    git clone https://github.com/hyochan/react-native-masonry-list.git
+    ```
+    
+2. Navigate to example project
+
+    ```
+    cd RNMasonryExample
+    ```
+
+3. Install packages and run it as you do in `react-native` project.
+
+
 ## LICENSE
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhyochan%2Freact-native-masonry-list.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhyochan%2Freact-native-masonry-list?ref=badge_large)
