@@ -12,9 +12,7 @@ const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe('Rendering', () => {
   beforeAll(() => {
-    component = (
-      <Template data={data} renderItem={({item, i}) => <View key={i} />} />
-    );
+    component = <Template data={data} renderItem={({i}) => <View key={i} />} />;
 
     testingLib = render(component);
   });
@@ -30,7 +28,7 @@ describe('Rendering', () => {
     component = (
       <Template
         data={data}
-        renderItem={({item, i}) => <View key={i} />}
+        renderItem={({i}) => <View key={i} />}
         LoadingView={<Text>loading</Text>}
         loading={true}
       />
@@ -39,6 +37,7 @@ describe('Rendering', () => {
     testingLib = render(component);
 
     const loading = await testingLib.findByText(/loading/i);
+
     expect(loading).toBeTruthy();
   });
 
@@ -47,7 +46,7 @@ describe('Rendering', () => {
       component = (
         <Template
           data={[]}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
           ListEmptyComponent={<Text>empty</Text>}
           loading={true}
         />
@@ -56,6 +55,7 @@ describe('Rendering', () => {
       testingLib = render(component);
 
       const empty = await testingLib.findByText(/empty/i);
+
       expect(empty).toBeTruthy();
     });
 
@@ -63,7 +63,7 @@ describe('Rendering', () => {
       component = (
         <Template
           data={[]}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
           loading={true}
           ListEmptyComponent={() => <Text>functional empty</Text>}
         />
@@ -72,6 +72,7 @@ describe('Rendering', () => {
       testingLib = render(component);
 
       const empty = await testingLib.findByText(/functional empty/i);
+
       expect(empty).toBeTruthy();
     });
   });
@@ -82,7 +83,7 @@ describe('Rendering', () => {
         <Template
           data={[]}
           refreshing={true}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
         />
       );
 
@@ -98,13 +99,14 @@ describe('Rendering', () => {
           refreshing={true}
           onRefresh={() => {}}
           numColumns={3}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
         />
       );
 
       testingLib = render(component);
 
       const masonryList = testingLib.getByTestId('masonry-list');
+
       expect(masonryList).toBeTruthy();
 
       act(() => {
@@ -122,13 +124,14 @@ describe('Rendering', () => {
           data={[]}
           refreshing={true}
           numColumns={3}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
         />
       );
 
       testingLib = render(component);
 
       const masonryList = testingLib.getByTestId('masonry-list');
+
       expect(masonryList).toBeTruthy();
 
       act(() => {
@@ -147,7 +150,7 @@ describe('Rendering', () => {
         <Template
           testID="masonry-list"
           data={data}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
           onEndReached={onEndReachedFn}
         />
       );
@@ -155,6 +158,7 @@ describe('Rendering', () => {
       testingLib = render(component);
 
       const masonryList = testingLib.getByTestId('masonry-list');
+
       expect(masonryList).toBeTruthy();
 
       // Scroll to bottom
@@ -174,13 +178,14 @@ describe('Rendering', () => {
         <Template
           testID="masonry-list"
           data={data}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
         />
       );
 
       testingLib = render(component);
 
       const masonryList = testingLib.getByTestId('masonry-list');
+
       expect(masonryList).toBeTruthy();
 
       // Scroll to bottom
@@ -202,7 +207,7 @@ describe('Rendering', () => {
         <Template
           testID="masonry-list"
           data={data}
-          renderItem={({item, i}) => <View key={i} />}
+          renderItem={({i}) => <View key={i} />}
           onEndReached={onEndReachedFn}
         />
       );
@@ -210,6 +215,7 @@ describe('Rendering', () => {
       testingLib = render(component);
 
       const masonryList = testingLib.getByTestId('masonry-list');
+
       expect(masonryList).toBeTruthy();
 
       // Scroll to bottom
