@@ -8,9 +8,7 @@ module.exports = {
     ...tsJestConfig.transform,
     '\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
   },
-  transformIgnorePatterns: [
-    "node_modules/(?!(@react-native|react-native)/)"
-  ],
+  transformIgnorePatterns: ['node_modules/(?!(@react-native|react-native)/)'],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   modulePaths: ['<rootDir>'],
   moduleDirectories: ['node_modules'],
@@ -18,9 +16,8 @@ module.exports = {
   globals: {
     'ts-jest': {
       babelConfig: true,
-    }
+    },
   },
-  setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"],
   modulePathIgnorePatterns: [
     '<rootDir>/lib/',
     '<rootDir>/node_modules/',
@@ -33,5 +30,5 @@ module.exports = {
     defaultPlatform: 'ios',
     platforms: ['android', 'ios', 'native'],
   },
-  coveragePathIgnorePatterns: ['/node_modules/'],
+  coveragePathIgnorePatterns: ['/node_modules/', '__tests__'],
 };

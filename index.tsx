@@ -16,7 +16,6 @@ interface Props<T>
   refreshing?: RefreshControlProps['refreshing'];
   onRefresh?: RefreshControlProps['onRefresh'];
   onEndReached?: () => void;
-  keyExtractor?: (item: T, i: number) => string;
   onEndReachedThreshold?: number;
   style?: StyleProp<ScrollViewProps>;
   data: T[];
