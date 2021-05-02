@@ -5,6 +5,10 @@ npm-debug.log
 yarn-error.log
 package-lock.json
 
-
 # build
 lib/
+
+# jest
+.jest
+
+coverage/
