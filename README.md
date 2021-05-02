@@ -38,20 +38,20 @@ Our `MasonryList` view component is able to render all child views with all diff
 ## Props
 
 ```tsx
-  keyPrefix?: string;
-  loading?: boolean;
-  refreshing?: RefreshControlProps['refreshing'];
-  onRefresh?: RefreshControlProps['onRefresh'];
-  onEndReached?: () => void;
-  onEndReachedThreshold?: number;
-  style?: StyleProp<ScrollViewProps>;
-  data: T[];
-  renderItem: ({item: T, i: number}) => ReactElement;
-  LoadingView?: React.ComponentType<any> | React.ReactElement | null;
-  ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
-  ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
-  ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
-  numColumns?: number;
+keyPrefix?: string;
+loading?: boolean;
+refreshing?: RefreshControlProps['refreshing'];
+onRefresh?: RefreshControlProps['onRefresh'];
+onEndReached?: () => void;
+onEndReachedThreshold?: number;
+style?: StyleProp<ScrollViewProps>;
+data: T[];
+renderItem: ({item: T, i: number}) => ReactElement;
+LoadingView?: React.ComponentType<any> | React.ReactElement | null;
+ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
+ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
+ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
+numColumns?: number;
 ```
 
 **`keyPrefix`** -             Add prefix for keying child views. This is currently incremented by `1`.
