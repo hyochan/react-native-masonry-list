@@ -8,6 +8,11 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![LICENSE](http://img.shields.io/npm/l/@react-native-seoul/masonry-list.svg?style=flat-square)](https://npmjs.org/package/@react-native-seoul/masonry-list)
 
+[![supports iOS](https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff)](https://itunes.apple.com/app/apple-store/id982107779)
+[![supports Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+[![supports web](https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff)](https://docs.expo.io/workflow/web/)
+[![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-000.svg?style=flat&logo=EXPO&labelColor=ffffff&logoColor=000)](https://github.com/expo/expo)
+
 ## Installation
 
 ```
@@ -49,19 +54,32 @@ Our `MasonryList` view component is able to render all child views with all diff
   numColumns?: number;
 ```
 
-* **keyPrefix**             Add prefix for keying child views. This is currently incremented by `1`.
-* **loading**               Currently in loading status.
-* **refreshing**            Currently in refreshing status.
-* **onRefresh**             Callback when `refresh` has been triggered.
-* **onEndReached**          Callback when end is reached just like the [onEndReached in FlatList](https://reactnative.dev/docs/flatlist#onendreached)
-* **style**                 Style props for [ScrollView](https://reactnative.dev/docs/next/scrollview) which is the container view.
-* **data**                  The array of the `data` for the view to render in `renderItem`
-* **rednerItem**            Render custom view with the `data` passed down.
-* **LoadingView**           Custom loading view when the view is in `loading` status.
-* **ListHeaderComponent**   Header component
-* **ListFooterComponent**   Footer component
-* **ListEmptyComponent**    Component to render when the `data` is empty.
-* **numColumns**            Number of columns you want to render. `Default to 2`.
+**`keyPrefix`** -             Add prefix for keying child views. This is currently incremented by `1`.
+
+**`loading`** -             Currently in loading status.
+
+**`refreshing`** -          Currently in refreshing status.
+
+**`onRefresh`** -           Callback when `refresh` has been triggered.
+
+**`onEndReached`** -        Callback when end is reached just like the [onEndReached in FlatList](https://reactnative.dev/docs/flatlist#onendreached)
+
+**`style`** -               Style props for [ScrollView](https://reactnative.dev/docs/next/scrollview) which is the container view.
+
+**`data`** -                The array of the `data` for the view to render in `renderItem`
+
+**`rednerItem`** -          Render custom view with the `data` passed down.
+
+**`LoadingView`** -         Custom loading view when the view is in `loading` status.
+
+**`ListHeaderComponent`** - Header component
+
+**`ListFooterComponent`** - Footer component
+
+**`ListEmptyComponent`** -  Component to render when the `data` is empty.
+
+**`numColumns`** -          Number of columns you want to render. `Default to 2`.
+
 
 ## Usage
 
