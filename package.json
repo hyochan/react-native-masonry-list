@@ -1,0 +1,48 @@
+{
+  "name": "@react-native-seoul/masonry-list",
+  "version": "0.0.1",
+  "description": "React Native Masonry List for Pinterest like UI implemented just like the [FlatList].",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./lib && tsc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyochan/react-native-masonry-list.git"
+  },
+  "keywords": [
+    "masonry",
+    "react-native",
+    "masonry-list",
+    "pinterest",
+    "flatlist"
+  ],
+  "author": "react-native-seoul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyochan/react-native-masonry-list/issues"
+  },
+  "homepage": "https://github.com/hyochan/react-native-masonry-list#readme",
+  "dependencies": {
+    "dooboolab-welcome": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9",
+    "react-native": ">=0.58",
+    "emotion": ">=11.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-native": "^0.64",
+    "@types/react-test-renderer": "^17.0.1",
+    "typescript": "^4.2.4",
+    "react": "^17.0.2",
+    "react-native": "^0.64.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
