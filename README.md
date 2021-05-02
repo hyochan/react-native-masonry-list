@@ -33,6 +33,10 @@ import MasonryList from '@react-native-seoul/masonry-list'
 
 > You can use as many columns as you want. It is flexible!
 
+## YouTube
+
+[See how to use it](https://www.youtube.com/watch?v=QxSKAcKKW_Q)
+
 ## Description
 
 Current `MasonryList` extends [ScrollView](https://reactnative.dev/docs/next/scrollview) and can pass down its props. In deed, this looks similar to [FlatList](https://reactnative.dev/docs/next/flatlist) to provide good developer experience. Look how this is used and compare to the `FlatList`.
