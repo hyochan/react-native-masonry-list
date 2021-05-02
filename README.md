@@ -21,6 +21,10 @@
 yarn add @react-native-seoul/masonry-list
 ```
 
+```tsx
+import MasonryList from '@react-native-seoul/masonry-list'
+```
+
 ## Preview
 
 | 2-columns | 3-columns | 4-columns |
