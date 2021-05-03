@@ -5,7 +5,7 @@
   "homepage": "https://github.com/hyochan/react-native-masonry-list",
   "unstable": true,
   "unlisted": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "releaseType": "patch",
   "files": ["./index.tsx", "./README.md"],
   "ignore": [".git"],

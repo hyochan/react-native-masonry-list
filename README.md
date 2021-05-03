@@ -25,7 +25,7 @@ yarn add @react-native-seoul/masonry-list
 import MasonryList from '@react-native-seoul/masonry-list';
 ```
 
-For `deno` user (Experimental)
+For [deno](https://deno.land) user (Experimental)
 ```ts
 import RNMasonryList from "https://deno.land/x/react_native_masonry_list/index.ts";
 ```
