@@ -1,9 +1,10 @@
 {
   "name": "@react-native-seoul/masonry-list",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Native Masonry List for Pinterest like UI implemented just like the [FlatList].",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "postinstall": "dooboolab-welcome postinstall",
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "build": "rm -rf ./lib && tsc && flowgen lib/index.d.ts -o lib/index.js.flow",
@@ -20,7 +21,7 @@
     "pinterest",
     "flatlist"
   ],
-  "author": "react-native-seoul",
+  "author": "hyochan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hyochan/react-native-masonry-list/issues"
