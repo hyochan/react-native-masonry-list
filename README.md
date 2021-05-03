@@ -7,8 +7,8 @@
 [![CI](https://github.com/hyochan/react-native-masonry-list/actions/workflows/ci.yml/badge.svg)](https://github.com/hyochan/react-native-masonry-list/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/hyochan/react-native-masonry-list/branch/master/graph/badge.svg?token=MSQVHOV57A)](https://codecov.io/gh/hyochan/react-native-masonry-list)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![nest badge](https://nest.land/badge.svg)](https://nest.land/package/react_native_masonry_list)
 [![LICENSE](http://img.shields.io/npm/l/@react-native-seoul/masonry-list.svg?style=flat-square)](https://npmjs.org/package/@react-native-seoul/masonry-list)
-
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![supports iOS](https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff)](https://itunes.apple.com/app/apple-store/id982107779)
 [![supports Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
@@ -22,8 +22,13 @@ yarn add @react-native-seoul/masonry-list
 ```
 
 ```tsx
-import MasonryList from '@react-native-seoul/masonry-list'
+import MasonryList from '@react-native-seoul/masonry-list';
 ```
+
+* For `deno` user
+  ```ts
+  import RNMasonryList from "https://deno.land/x/react_native_masonry_list/index.ts";
+  ```
 
 ## Preview
 

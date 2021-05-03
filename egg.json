@@ -1,0 +1,17 @@
+{
+  "name": "react_native_masonry_list",
+  "entry": "./index.tsx",
+  "description": "React Native Masonry List for Pinterest like UI implemented just like the [FlatList].",
+  "homepage": "https://github.com/hyochan/react-native-masonry-list",
+  "unstable": true,
+  "unlisted": false,
+  "version": "1.0.2",
+  "releaseType": "patch",
+  "files": ["./index.tsx", "./README.md"],
+  "ignore": [".git"],
+  "checkFormat": "deno fmt",
+  "checkTests": "deno test",
+  "checkInstallation": true,
+  "check": false,
+  "$schema": "https://x.nest.land/eggs@0.3.1/src/schema.json"
+}
