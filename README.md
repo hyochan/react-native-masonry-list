@@ -43,7 +43,7 @@ import RNMasonryList from "https://deno.land/x/react_native_masonry_list/index.t
 
 ## Description
 
-Current `MasonryList` extends [ScrollView](https://reactnative.dev/docs/next/scrollview) and can pass down its props. In deed, this looks similar to [FlatList](https://reactnative.dev/docs/next/flatlist) to provide good developer experience. Look how this is used and compare to the `FlatList`.
+Current `MasonryList` extends [ScrollView](https://reactnative.dev/docs/next/scrollview) and can pass down its props. Indeed, this looks similar to [FlatList](https://reactnative.dev/docs/next/flatlist) to provide good developer experience. Look how this is used and compare to the `FlatList`.
 
 The `FlatList` won't offer you to draw `MansonryList` because when you provide [numColumns](https://reactnative.dev/docs/next/flatlist#numcolumns) bigger than `1`, the native view will switch to `FlatList` to `GridView` which will render its children with identical height only.
 
