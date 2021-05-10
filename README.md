@@ -41,6 +41,9 @@ import RNMasonryList from "https://deno.land/x/react_native_masonry_list/index.t
 
 [See how to use it](https://www.youtube.com/watch?v=QxSKAcKKW_Q)
 
+## Blog
+[How it is made](https://dooboolab.medium.com/react-native-masonry-list-a5365647f2c1)
+
 ## Description
 
 Current `MasonryList` extends [ScrollView](https://reactnative.dev/docs/next/scrollview) and can pass down its props. Indeed, this looks similar to [FlatList](https://reactnative.dev/docs/next/flatlist) to provide good developer experience. Look how this is used and compare to the `FlatList`.
