@@ -200,7 +200,7 @@ const App: FC = () => {
     item,
   }: {
     item: Furniture;
-    index: number;
+    index?: number;
   }): ReactElement => {
     return <FurnitureCard item={item} />;
   };
@@ -209,7 +209,6 @@ const App: FC = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <MasonryList
-        style={{alignSelf: 'stretch'}}
         contentContainerStyle={{
           paddingHorizontal: 24,
           alignSelf: 'stretch',
