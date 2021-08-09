@@ -66,7 +66,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       removeClippedSubviews={true}
       refreshControl={
         <RefreshControl
-          refreshing={!!(refreshing && isRefreshing)}
+          refreshing={!!(refreshing || isRefreshing)}
           onRefresh={() => {
             setIsRefreshing(true);
             onRefresh?.();
