@@ -1,3 +1,6 @@
+[1.0.7]
+* Use `refreshing` from props if specified [#13](https://github.com/hyochan/react-native-masonry-list/pull/13)
+
 [1.0.6]
 * Fix unpublished typings
 
