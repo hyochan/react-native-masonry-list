@@ -57,6 +57,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     LoadingView,
     numColumns = 2,
     style,
+    horizontal,
   } = props;
 
   return (
@@ -87,12 +88,15 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           <ListEmptyComponent />
         )
       ) : (
-        <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{flex: 1, flexDirection: horizontal ? 'column' : 'row'}}>
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
                 key={`${keyPrefix}-${num.toString()}`}
-                style={{flex: 1 / numColumns}}>
+                style={{
+                  flex: 1 / numColumns,
+                  flexDirection: horizontal ? 'row' : 'column',
+                }}>
                 {data
                   .map((el, i) => {
                     if (i % numColumns === num)
