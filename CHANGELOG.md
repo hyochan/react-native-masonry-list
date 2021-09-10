@@ -1,17 +1,15 @@
-[1.0.7]
-* Use `refreshing` from props if specified [#13](https://github.com/hyochan/react-native-masonry-list/pull/13)
+## 1.0.8
 
-[1.0.6]
-* Fix unpublished typings
+Add support for horizontal layout [#17](https://github.com/hyochan/react-native-masonry-list/pull/17)
 
-[1.0.3]
+## 1.0.7
 
-* More readme
+Use `refreshing` from props if specified [#13](https://github.com/hyochan/react-native-masonry-list/pull/13)
 
-[1.0.2]
+## 1.0.6
 
-* More readme
+Fix unpublished typings
 
-[1.0.1]
+## 1.0.1
 
-* Initial release
+Initial release
