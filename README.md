@@ -85,7 +85,7 @@ numColumns?: number;
 
 **`data`** -                The array of the `data` for the view to render in `renderItem`
 
-**`rednerItem`** -          Render custom view with the `data` passed down.
+**`renderItem`** -          Render custom view with the `data` passed down.
 
 **`LoadingView`** -         Custom loading view when the view is in `loading` status.
 
