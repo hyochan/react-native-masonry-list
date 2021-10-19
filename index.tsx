@@ -6,18 +6,20 @@ import {
   ScrollViewProps,
   StyleProp,
   View,
+  ViewStyle,
 } from 'react-native';
-import React, {ReactElement, useState} from 'react';
+import React, {MutableRefObject, ReactElement, useState} from 'react';
 
 interface Props<T>
   extends Omit<ScrollViewProps, 'refreshControl' | 'onScroll'> {
+  ref?: MutableRefObject<ScrollView | undefined>;
   keyPrefix?: string;
   loading?: boolean;
   refreshing?: RefreshControlProps['refreshing'];
   onRefresh?: RefreshControlProps['onRefresh'];
   onEndReached?: () => void;
   onEndReachedThreshold?: number;
-  style?: StyleProp<ScrollViewProps>;
+  style?: StyleProp<ViewStyle>;
   data: T[];
   renderItem: ({item: T, i: number}) => ReactElement;
   LoadingView?: React.ComponentType<any> | React.ReactElement | null;
@@ -46,6 +48,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     keyPrefix,
     refreshing,
     data,
+    ref,
     ListHeaderComponent,
     ListEmptyComponent,
     ListFooterComponent,
@@ -63,7 +66,8 @@ function MasonryList<T>(props: Props<T>): ReactElement {
   return (
     <ScrollView
       {...props}
-      style={[{alignSelf: 'stretch'}, style]}
+      ref={ref}
+      style={[{flex: 1, alignSelf: 'stretch'}, style]}
       removeClippedSubviews={true}
       refreshControl={
         <RefreshControl
