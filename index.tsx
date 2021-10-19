@@ -8,7 +8,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import React, {MutableRefObject, ReactElement, useState} from 'react';
+import React, {MutableRefObject, ReactElement, memo, useState} from 'react';
 
 interface Props<T>
   extends Omit<ScrollViewProps, 'refreshControl' | 'onScroll'> {
@@ -120,4 +120,4 @@ function MasonryList<T>(props: Props<T>): ReactElement {
   );
 }
 
-export default MasonryList;
+export default memo(MasonryList);

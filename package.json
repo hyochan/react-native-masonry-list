@@ -1,6 +1,6 @@
 {
   "name": "@react-native-seoul/masonry-list",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "React Native Masonry List for Pinterest like UI implemented just like the [FlatList].",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -35,26 +35,27 @@
     "react-native": ">=0.58"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
-    "@dooboo/eslint-config": "^0.8.4",
+    "@dooboo/eslint-config": "^1.1.1",
     "@testing-library/jest-native": "^4.0.2",
-    "@testing-library/react-native": "^7.2.0",
-    "@types/jest": "^27.0.1",
-    "@types/react": "~17.0.20",
+    "@testing-library/react-native": "^8.0.0",
+    "@types/jest": "^27.0.2",
+    "@types/react": "~17.0.30",
     "@types/react-dom": "^17.0.9",
-    "@types/react-native": "~0.65.0",
+    "@types/react-native": "~0.65.8",
     "@types/react-test-renderer": "^17.0.1",
     "eslint": "^7.32.0",
-    "flowgen": "^1.14.1",
-    "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.66.0",
-    "prettier": "^2.4.0",
+    "flowgen": "^1.15.0",
+    "jest": "^27.3.1",
+    "jest-expo": "^42.1.0",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
-    "react-native": "^0.64.0",
+    "react-native": "^0.66.1",
     "react-test-renderer": "^17.0.2",
-    "ts-jest": "^26.5.5",
-    "typescript": "^4.4.2"
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   },
   "publishConfig": {
     "access": "public"

@@ -30,6 +30,7 @@ exports[`Rendering should render without crashing 1`] = `
     Array [
       Object {
         "alignSelf": "stretch",
+        "flex": 1,
       },
       undefined,
     ]
