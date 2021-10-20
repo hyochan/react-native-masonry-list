@@ -55,6 +55,7 @@ Our `MasonryList` view component is able to render all child views with all diff
 ## Props
 
 ```tsx
+innerRef?: MutableRefObject<ScrollView | undefined>;
 keyPrefix?: string;
 loading?: boolean;
 refreshing?: RefreshControlProps['refreshing'];
@@ -70,6 +71,8 @@ ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
 ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
 numColumns?: number;
 ```
+
+**`innerRef`** -            Expose ScrollView instance with `ref`, example usage:  `ref.current.scrollTo`.
 
 **`keyPrefix`** -             Add prefix for keying child views. This is currently incremented by `1`.
 

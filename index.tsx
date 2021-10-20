@@ -12,7 +12,7 @@ import React, {MutableRefObject, ReactElement, memo, useState} from 'react';
 
 interface Props<T>
   extends Omit<ScrollViewProps, 'refreshControl' | 'onScroll'> {
-  ref?: MutableRefObject<ScrollView | undefined>;
+  innerRef?: MutableRefObject<ScrollView | undefined>;
   keyPrefix?: string;
   loading?: boolean;
   refreshing?: RefreshControlProps['refreshing'];
@@ -48,7 +48,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     keyPrefix,
     refreshing,
     data,
-    ref,
+    innerRef,
     ListHeaderComponent,
     ListEmptyComponent,
     ListFooterComponent,
@@ -66,7 +66,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
   return (
     <ScrollView
       {...props}
-      ref={ref}
+      ref={innerRef}
       style={[{flex: 1, alignSelf: 'stretch'}, style]}
       removeClippedSubviews={true}
       refreshControl={
