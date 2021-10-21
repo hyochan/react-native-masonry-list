@@ -1,3 +1,17 @@
+## 1.1.1
+
+Expose `innerRef` to use ref of `MasonryList` [#21](https://github.com/hyochan/react-native-masonry-list/pull/21)
+
+## 1.1.0
+
+Fix element typings and add default `flex: 1` style
+
+Update packages and make it a pure component
+
+## 1.0.9
+
+Fix element typings and add default `flex: 1` style
+
 ## 1.0.8
 
 Add support for horizontal layout [#17](https://github.com/hyochan/react-native-masonry-list/pull/17)
