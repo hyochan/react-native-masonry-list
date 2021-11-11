@@ -26,6 +26,9 @@ interface Props<T>
   ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
   ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
   ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
+  ListHeaderComponentStyle?: StyleProp<ViewStyle>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
 }
 
@@ -52,6 +55,9 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     ListHeaderComponent,
     ListEmptyComponent,
     ListFooterComponent,
+    ListHeaderComponentStyle,
+    containerStyle,
+    contentContainerStyle,
     renderItem,
     onEndReachedThreshold,
     onEndReached,
@@ -59,15 +65,17 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     loading,
     LoadingView,
     numColumns = 2,
-    style,
     horizontal,
   } = props;
 
+  const {style, ...propsWithoutStyle} = props;
+
   return (
     <ScrollView
-      {...props}
+      {...propsWithoutStyle}
       ref={innerRef}
-      style={[{flex: 1, alignSelf: 'stretch'}, style]}
+      style={[{flex: 1, alignSelf: 'stretch'}, containerStyle]}
+      contentContainerStyle={contentContainerStyle}
       removeClippedSubviews={true}
       refreshControl={
         <RefreshControl
@@ -84,7 +92,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
         if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.1))
           onEndReached?.();
       }}>
-      {ListHeaderComponent}
+      <View style={ListHeaderComponentStyle}>{ListHeaderComponent}</View>
       {data.length === 0 && ListEmptyComponent ? (
         React.isValidElement(ListEmptyComponent) ? (
           ListEmptyComponent
@@ -92,7 +100,14 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           <ListEmptyComponent />
         )
       ) : (
-        <View style={{flex: 1, flexDirection: horizontal ? 'column' : 'row'}}>
+        <View
+          style={[
+            {
+              flex: 1,
+              flexDirection: horizontal ? 'column' : 'row',
+            },
+            style,
+          ]}>
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
