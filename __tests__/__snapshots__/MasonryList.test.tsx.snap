@@ -38,12 +38,16 @@ exports[`Rendering should render without crashing 1`] = `
 >
   <RCTRefreshControl />
   <View>
+    <View />
     <View
       style={
-        Object {
-          "flex": 1,
-          "flexDirection": "row",
-        }
+        Array [
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          },
+          undefined,
+        ]
       }
     >
       <View
