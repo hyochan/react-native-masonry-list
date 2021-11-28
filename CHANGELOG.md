@@ -1,3 +1,12 @@
+## 1.1.3
+
+Layout styling fixes [#23](https://github.com/hyochan/react-native-masonry-list/pull/23)
+
+- Added ListComponentStyleProp to provide header styles
+- Moved style prop from scrollview to view that wraps items in list
+- Added contentContainerStyle prop
+- Renamed prop for ScrollView from style to containerStyle
+
 ## 1.1.1
 
 Expose `innerRef` to use ref of `MasonryList` [#21](https://github.com/hyochan/react-native-masonry-list/pull/21)

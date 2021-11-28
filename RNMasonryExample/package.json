@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@react-native-seoul/masonry-list": "^1.0.10",
+    "@react-native-seoul/masonry-list": "^1.1.2",
     "react": "17.0.2",
     "react-native": "0.64.0"
   },

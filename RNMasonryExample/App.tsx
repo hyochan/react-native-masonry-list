@@ -209,6 +209,7 @@ const App: FC = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <MasonryList
+        ListHeaderComponent={<View />}
         contentContainerStyle={{
           paddingHorizontal: 24,
           alignSelf: 'stretch',
