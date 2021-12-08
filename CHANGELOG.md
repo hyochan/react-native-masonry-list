@@ -1,3 +1,8 @@
+## 1.1.4
+
+Small internal lint fixes.
+
+
 ## 1.1.3
 
 Layout styling fixes [#23](https://github.com/hyochan/react-native-masonry-list/pull/23)

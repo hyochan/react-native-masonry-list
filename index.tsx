@@ -91,7 +91,8 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       onScroll={({nativeEvent}: {nativeEvent: NativeScrollEvent}) => {
         if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.1))
           onEndReached?.();
-      }}>
+      }}
+    >
       <View style={ListHeaderComponentStyle}>{ListHeaderComponent}</View>
       {data.length === 0 && ListEmptyComponent ? (
         React.isValidElement(ListEmptyComponent) ? (
@@ -107,7 +108,8 @@ function MasonryList<T>(props: Props<T>): ReactElement {
               flexDirection: horizontal ? 'column' : 'row',
             },
             style,
-          ]}>
+          ]}
+        >
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
@@ -115,7 +117,8 @@ function MasonryList<T>(props: Props<T>): ReactElement {
                 style={{
                   flex: 1 / numColumns,
                   flexDirection: horizontal ? 'row' : 'column',
-                }}>
+                }}
+              >
                 {data
                   .map((el, i) => {
                     if (i % numColumns === num)

@@ -181,7 +181,8 @@ const FurnitureCard: FC<{item: Furniture}> = ({item}) => {
       <Text
         style={{
           marginTop: 8,
-        }}>
+        }}
+      >
         {item.text}
       </Text>
     </View>
