@@ -1,3 +1,8 @@
+## 1.2.0
+
+## What's Changed
+* Remove `keyPrefix` and replace with `keyExtractor` like [FlatList].
+
 ## 1.1.5
 
 ## What's Changed

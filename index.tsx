@@ -12,7 +12,6 @@ import React, {MutableRefObject, ReactElement, memo, useState} from 'react';
 
 interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   innerRef?: MutableRefObject<ScrollView | undefined>;
-  keyPrefix?: string;
   loading?: boolean;
   refreshing?: RefreshControlProps['refreshing'];
   onRefresh?: RefreshControlProps['onRefresh'];
@@ -29,6 +28,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   contentContainerStyle?: StyleProp<ViewStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
+  keyExtractor?: (item: T, index: number) => string;
 }
 
 const isCloseToBottom = (
@@ -47,7 +47,6 @@ function MasonryList<T>(props: Props<T>): ReactElement {
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
 
   const {
-    keyPrefix,
     refreshing,
     data,
     innerRef,
@@ -67,6 +66,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     horizontal,
     onScroll,
     removeClippedSubviews = false,
+    keyExtractor,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -117,7 +117,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
-                key={`${keyPrefix}-${num.toString()}`}
+                key={keyExtractor(_, num)}
                 style={{
                   flex: 1 / numColumns,
                   flexDirection: horizontal ? 'row' : 'column',
