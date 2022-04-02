@@ -66,6 +66,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     numColumns = 2,
     horizontal,
     onScroll,
+    removeClippedSubviews = false,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -76,7 +77,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       ref={innerRef}
       style={[{flex: 1, alignSelf: 'stretch'}, containerStyle]}
       contentContainerStyle={contentContainerStyle}
-      removeClippedSubviews={true}
+      removeClippedSubviews={removeClippedSubviews}
       refreshControl={
         <RefreshControl
           refreshing={!!(refreshing || isRefreshing)}
