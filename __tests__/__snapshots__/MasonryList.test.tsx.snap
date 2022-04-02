@@ -58,11 +58,21 @@ exports[`Rendering should render without crashing 1`] = `
           }
         }
       >
-        <View />
-        <View />
-        <View />
-        <View />
-        <View />
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
       </View>
       <View
         style={
@@ -72,11 +82,21 @@ exports[`Rendering should render without crashing 1`] = `
           }
         }
       >
-        <View />
-        <View />
-        <View />
-        <View />
-        <View />
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
+        <View>
+          <View />
+        </View>
       </View>
     </View>
   </View>
