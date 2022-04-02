@@ -10,8 +10,7 @@ import {
 } from 'react-native';
 import React, {MutableRefObject, ReactElement, memo, useState} from 'react';
 
-interface Props<T>
-  extends Omit<ScrollViewProps, 'refreshControl' | 'onScroll'> {
+interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   innerRef?: MutableRefObject<ScrollView | undefined>;
   keyPrefix?: string;
   loading?: boolean;
@@ -66,6 +65,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     LoadingView,
     numColumns = 2,
     horizontal,
+    onScroll,
     removeClippedSubviews = false,
   } = props;
 
@@ -89,9 +89,12 @@ function MasonryList<T>(props: Props<T>): ReactElement {
         />
       }
       scrollEventThrottle={16}
-      onScroll={({nativeEvent}: {nativeEvent: NativeScrollEvent}) => {
+      onScroll={(e) => {
+        const nativeEvent: NativeScrollEvent = e.nativeEvent;
         if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.1))
           onEndReached?.();
+
+        onScroll?.(e);
       }}
     >
       <View style={ListHeaderComponentStyle}>{ListHeaderComponent}</View>
