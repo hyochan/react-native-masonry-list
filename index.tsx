@@ -28,7 +28,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   contentContainerStyle?: StyleProp<ViewStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
-  keyExtractor?: (item: T, index: number) => string;
+  keyExtractor?: ((item: T, index: number) => string) | undefined;
 }
 
 const isCloseToBottom = (

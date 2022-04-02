@@ -1,3 +1,6 @@
+## 1.2.1
+* Fix `keyExtractor` types.
+
 ## 1.2.0
 
 ## What's Changed
