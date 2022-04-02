@@ -5,7 +5,7 @@
 [![Npm Version](http://img.shields.io/npm/v/@react-native-seoul/masonry-list.svg?style=flat-square)](https://npmjs.org/package/@react-native-seoul/masonry-list)
 [![Downloads](http://img.shields.io/npm/dm/@react-native-seoul/masonry-list.svg?style=flat-square)](https://npmjs.org/package/@react-native-seoul/masonry-list)
 [![CI](https://github.com/hyochan/react-native-masonry-list/actions/workflows/ci.yml/badge.svg)](https://github.com/hyochan/react-native-masonry-list/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/hyochan/react-native-masonry-list/branch/master/graph/badge.svg?token=MSQVHOV57A)](https://codecov.io/gh/hyochan/react-native-masonry-list)
+[![codecov](https://codecov.io/gh/hyochan/react-native-masonry-list/branch/main/graph/badge.svg?token=MSQVHOV57A)](https://codecov.io/gh/hyochan/react-native-masonry-list)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![LICENSE](http://img.shields.io/npm/l/@react-native-seoul/masonry-list.svg?style=flat-square)](https://npmjs.org/package/@react-native-seoul/masonry-list)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
@@ -22,11 +22,6 @@ yarn add @react-native-seoul/masonry-list
 
 ```tsx
 import MasonryList from '@react-native-seoul/masonry-list';
-```
-
-For [deno](https://deno.land) user (Experimental)
-```ts
-import RNMasonryList from "https://deno.land/x/react_native_masonry_list/index.ts";
 ```
 
 ## Preview

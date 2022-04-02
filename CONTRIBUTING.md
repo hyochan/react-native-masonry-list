@@ -22,7 +22,7 @@ This post called [How to Write a Git Commit Message](https://chris.beams.io/post
 
 ## Pull request(PR)
 
-PR is available to `master` branch.
+PR is available to `main` branch.
 
 Each PR should correspond to one idea and implement it coherently. This idea may be a feature that spans several parts of the codebase. For example, changing an API may include changes to the Android, iOS, and web implementations, the JavaScript SDK, and the docs for the API.
 

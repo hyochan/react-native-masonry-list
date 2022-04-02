@@ -17,7 +17,7 @@ will likely get reverted accidentally sooner or later. PRs must include tests fo
 
 Before you create this PR confirms that it meets all requirements listed below by checking the relevant checkboxes (`[x]`). This will ensure a smooth and quick review process.
 
-- [ ] I read the [Contributor Guide](https://github.com/hyochan/react-native-masonry-list/blob/master/CONTRIBUTING.md) and followed the process outlined there for submitting PRs.
+- [ ] I read the [Contributor Guide](https://github.com/hyochan/react-native-masonry-list/blob/main/CONTRIBUTING.md) and followed the process outlined there for submitting PRs.
 - [ ] Run `yarn lint && yarn tsc`
 - [ ] Run `yarn test` or `yarn test -u` if you need to update snapshot.
 - [ ] I am willing to follow-up on review comments in a timely manner.
