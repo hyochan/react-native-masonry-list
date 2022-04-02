@@ -1,3 +1,10 @@
+## 1.1.5
+
+## What's Changed
+* Add optional `removeClippedSubviews` by @hyochan in https://github.com/hyochan/react-native-masonry-list/pull/30
+* Support `onScroll` by @hyochan in https://github.com/hyochan/react-native-masonry-list/pull/31
+
+
 ## 1.1.4
 
 Small internal lint fixes.
