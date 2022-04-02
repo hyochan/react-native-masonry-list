@@ -14,6 +14,10 @@
 [![supports web](https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff)](https://docs.expo.io/workflow/web/)
 [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-000.svg?style=flat&logo=EXPO&labelColor=ffffff&logoColor=000)](https://github.com/expo/expo)
 
+## Notice
+
+If you want [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) version, you may checkout [reanimated-masonry-list](https://github.com/hyochan/reanimated-masonry-list). This repo is created with issue [#14](https://github.com/hyochan/react-native-masonry-list/issues/14).
+
 ## Installation
 
 ```
@@ -51,7 +55,6 @@ Our `MasonryList` view component is able to render all child views with all diff
 
 ```tsx
 innerRef?: MutableRefObject<ScrollView | undefined>;
-keyPrefix?: string;
 loading?: boolean;
 refreshing?: RefreshControlProps['refreshing'];
 onRefresh?: RefreshControlProps['onRefresh'];
@@ -65,11 +68,10 @@ ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
 ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
 ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
 numColumns?: number;
+keyExtractor?: ((item: T | any, index: number) => string) | undefined;
 ```
 
 **`innerRef`** -            Expose ScrollView instance with `ref`, example usage:  `ref.current.scrollTo`.
-
-**`keyPrefix`** -             Add prefix for keying child views. This is currently incremented by `1`.
 
 **`loading`** -             Currently in loading status.
 
@@ -101,7 +103,7 @@ numColumns?: number;
 ```tsx
 <MasonryList
   data={filteredItems}
-  keyExtractor={(item, index): string => index.toString()}
+  keyExtractor={(item): string => item.id}
   numColumns={2}
   showsVerticalScrollIndicator={false}
   renderItem={({item}) => <CardItem />}
