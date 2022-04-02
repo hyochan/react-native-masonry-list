@@ -23,7 +23,7 @@ exports[`Rendering should render without crashing 1`] = `
       refreshing={false}
     />
   }
-  removeClippedSubviews={true}
+  removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEventThrottle={16}
   style={
