@@ -117,7 +117,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
-                key={keyExtractor(_, num)}
+                key={keyExtractor?.(_, num)}
                 style={{
                   flex: 1 / numColumns,
                   flexDirection: horizontal ? 'row' : 'column',
