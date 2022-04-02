@@ -28,7 +28,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   contentContainerStyle?: StyleProp<ViewStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
-  keyExtractor?: ((item: T, index: number) => string) | undefined;
+  keyExtractor?: ((item: T | any, index: number) => string) | undefined;
 }
 
 const isCloseToBottom = (
@@ -117,7 +117,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           {Array.from(Array(numColumns), (_, num) => {
             return (
               <View
-                key={keyExtractor?.(_, num)}
+                key={`masonry-column-${num}`}
                 style={{
                   flex: 1 / numColumns,
                   flexDirection: horizontal ? 'row' : 'column',
@@ -126,7 +126,11 @@ function MasonryList<T>(props: Props<T>): ReactElement {
                 {data
                   .map((el, i) => {
                     if (i % numColumns === num)
-                      return renderItem({item: el, i});
+                      return (
+                        <View key={keyExtractor?.(el, i)}>
+                          {renderItem({item: el, i})}
+                        </View>
+                      );
 
                     return null;
                   })
