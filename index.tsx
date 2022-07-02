@@ -15,6 +15,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   loading?: boolean;
   refreshing?: RefreshControlProps['refreshing'];
   onRefresh?: RefreshControlProps['onRefresh'];
+  refreshControl?: boolean;
   onEndReached?: () => void;
   onEndReachedThreshold?: number;
   style?: StyleProp<ViewStyle>;
@@ -79,14 +80,16 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       contentContainerStyle={contentContainerStyle}
       removeClippedSubviews={removeClippedSubviews}
       refreshControl={
-        <RefreshControl
-          refreshing={!!(refreshing || isRefreshing)}
-          onRefresh={() => {
-            setIsRefreshing(true);
-            onRefresh?.();
-            setIsRefreshing(false);
-          }}
-        />
+        props.refreshControl === false ? null : (
+          <RefreshControl
+            refreshing={!!(refreshing || isRefreshing)}
+            onRefresh={() => {
+              setIsRefreshing(true);
+              onRefresh?.();
+              setIsRefreshing(false);
+            }}
+          />
+        )
       }
       scrollEventThrottle={16}
       onScroll={(e) => {
