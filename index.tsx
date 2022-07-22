@@ -18,7 +18,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   onEndReached?: () => void;
   onEndReachedThreshold?: number;
   style?: StyleProp<ViewStyle>;
-  data: T[];
+  data: readonly T[];
   renderItem: ({item: T, i: number}) => ReactElement;
   LoadingView?: React.ComponentType<any> | React.ReactElement | null;
   ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
