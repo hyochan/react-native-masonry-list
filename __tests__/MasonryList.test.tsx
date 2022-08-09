@@ -117,6 +117,28 @@ describe('Rendering', () => {
       expect(masonryList.props.onRefresh).toBeDefined();
     });
 
+    it('should set `refreshControl` to falsy', async () => {
+      component = (
+        <Template
+          testID="masonry-list"
+          data={[]}
+          horizontal
+          refreshControl={false}
+          numColumns={3}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({i}) => <View key={i} />}
+        />
+      );
+
+      testingLib = render(component);
+
+      const masonryList = testingLib.getByTestId('masonry-list');
+
+      expect(masonryList).toBeTruthy();
+
+      expect(masonryList.props.refreshControl).toBeFalsy();
+    });
+
     it('should trigger `onRefresh` even when `onRefresh` is not provided', async () => {
       component = (
         <Template
