@@ -68,6 +68,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     onScroll,
     removeClippedSubviews = false,
     keyExtractor,
+    refreshControl = true,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -80,7 +81,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       contentContainerStyle={contentContainerStyle}
       removeClippedSubviews={removeClippedSubviews}
       refreshControl={
-        props.refreshControl === false ? null : (
+        refreshControl ? (
           <RefreshControl
             refreshing={!!(refreshing || isRefreshing)}
             onRefresh={() => {
@@ -89,7 +90,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
               setIsRefreshing(false);
             }}
           />
-        )
+        ) : null
       }
       scrollEventThrottle={16}
       onScroll={(e) => {
@@ -130,7 +131,11 @@ function MasonryList<T>(props: Props<T>): ReactElement {
                   .map((el, i) => {
                     if (i % numColumns === num)
                       return (
-                        <View key={keyExtractor?.(el, i)}>
+                        <View
+                          key={
+                            keyExtractor?.(el, i) || `masonry-row-${num}-${i}`
+                          }
+                        >
                           {renderItem({item: el, i})}
                         </View>
                       );
