@@ -15,6 +15,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   loading?: boolean;
   refreshing?: RefreshControlProps['refreshing'];
   onRefresh?: RefreshControlProps['onRefresh'];
+  refreshControl?: boolean;
   onEndReached?: () => void;
   onEndReachedThreshold?: number;
   style?: StyleProp<ViewStyle>;
@@ -67,6 +68,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     onScroll,
     removeClippedSubviews = false,
     keyExtractor,
+    refreshControl = true,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -79,14 +81,16 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       contentContainerStyle={contentContainerStyle}
       removeClippedSubviews={removeClippedSubviews}
       refreshControl={
-        <RefreshControl
-          refreshing={!!(refreshing || isRefreshing)}
-          onRefresh={() => {
-            setIsRefreshing(true);
-            onRefresh?.();
-            setIsRefreshing(false);
-          }}
-        />
+        refreshControl ? (
+          <RefreshControl
+            refreshing={!!(refreshing || isRefreshing)}
+            onRefresh={() => {
+              setIsRefreshing(true);
+              onRefresh?.();
+              setIsRefreshing(false);
+            }}
+          />
+        ) : null
       }
       scrollEventThrottle={16}
       onScroll={(e) => {
@@ -127,7 +131,11 @@ function MasonryList<T>(props: Props<T>): ReactElement {
                   .map((el, i) => {
                     if (i % numColumns === num)
                       return (
-                        <View key={keyExtractor?.(el, i)}>
+                        <View
+                          key={
+                            keyExtractor?.(el, i) || `masonry-row-${num}-${i}`
+                          }
+                        >
                           {renderItem({item: el, i})}
                         </View>
                       );
