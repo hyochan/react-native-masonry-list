@@ -26,7 +26,9 @@ module.exports = async (env, argv) => {
             const test = oneOfRule.test.toString().replace('|svg', '');
 
             return {...oneOfRule, test: new RegExp(test)};
-          } else return oneOfRule;
+          } else {
+            return oneOfRule;
+          }
         }),
       };
 
@@ -47,7 +49,9 @@ module.exports = async (env, argv) => {
       }
 
       return newRule;
-    } else return rule;
+    } else {
+      return rule;
+    }
   });
 
   return config;
