@@ -1,0 +1,12 @@
+{
+  "reject": [
+    "react",
+    "react-native",
+    "react-dom",
+    "react-test-renderer",
+    "react-native-screens",
+    "react-native-gesture-handler",
+    "react-native-svg",
+    "react-native-reanimated"
+  ]
+}

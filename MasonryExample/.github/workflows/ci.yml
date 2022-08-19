@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+          # token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install modules
+        run: yarn install --immutable
+
+      - name: Check linting
+        run: yarn lint
+
+      - name: Build typescript
+        run: yarn tsc
+
+      - name: Test
+        run: yarn test --coverage --detectOpenHandles --forceExit
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          # token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/
+          flags: integration
+          name: codecov-umbrella
+          fail_ci_if_error: false
+          verbose: true

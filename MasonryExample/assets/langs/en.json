@@ -1,0 +1,10 @@
+{
+  "HELLO": "Hello",
+  "LOGIN": "Login",
+  "EMAIL": "Email",
+  "PASSWORD": "Password",
+  "SIGNUP": "SIGN UP",
+  "FORGOT_PW": "Forgot password?",
+  "NAVIGATE": "Navigate to %{name}",
+  "CHANGE_THEME": "Change theme"
+}

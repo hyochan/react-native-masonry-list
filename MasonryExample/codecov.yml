@@ -1,0 +1,27 @@
+codecov:
+  token: 6133c503-ec2e-444e-bae8-b9ab6ab5dc99
+  notify:
+    require_ci_to_pass: yes
+
+coverage:
+  precision: 2
+  round: down
+  range: '70...100'
+
+  status:
+    project: yes
+    patch: yes
+    changes: no
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: 'header, diff'
+  behavior: default
+  require_changes: no
