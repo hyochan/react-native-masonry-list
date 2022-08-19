@@ -95,8 +95,9 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       scrollEventThrottle={16}
       onScroll={(e) => {
         const nativeEvent: NativeScrollEvent = e.nativeEvent;
-        if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.1))
+        if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.0)) {
           onEndReached?.();
+        }
 
         onScroll?.(e);
       }}
@@ -129,7 +130,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
               >
                 {data
                   .map((el, i) => {
-                    if (i % numColumns === num)
+                    if (i % numColumns === num) {
                       return (
                         <View
                           key={
@@ -139,6 +140,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
                           {renderItem({item: el, i})}
                         </View>
                       );
+                    }
 
                     return null;
                   })
