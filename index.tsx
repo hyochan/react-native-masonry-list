@@ -39,7 +39,7 @@ const isCloseToBottom = (
   const paddingToBottom = contentSize.height * onEndReachedThreshold;
 
   return (
-    layoutMeasurement.height + contentOffset.y >=
+    Math.ceil(layoutMeasurement.height + contentOffset.y) >=
     contentSize.height - paddingToBottom
   );
 };
@@ -93,7 +93,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
         ) : null
       }
       scrollEventThrottle={16}
-      onScroll={(e) => {
+      onMomentumScrollEnd={(e) => {
         const nativeEvent: NativeScrollEvent = e.nativeEvent;
         if (isCloseToBottom(nativeEvent, onEndReachedThreshold || 0.0)) {
           onEndReached?.();
