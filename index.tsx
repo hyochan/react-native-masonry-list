@@ -39,7 +39,7 @@ const isCloseToBottom = (
   const paddingToBottom = contentSize.height * onEndReachedThreshold;
 
   return (
-    layoutMeasurement.height + contentOffset.y >=
+    Math.ceil(layoutMeasurement.height + contentOffset.y) >=
     contentSize.height - paddingToBottom
   );
 };
