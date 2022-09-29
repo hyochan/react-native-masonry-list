@@ -1,5 +1,6 @@
 import {
   NativeScrollEvent,
+  Omit,
   RefreshControl,
   RefreshControlProps,
   ScrollView,
@@ -20,9 +21,9 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   onEndReachedThreshold?: number;
   style?: StyleProp<ViewStyle>;
   data: T[];
-  renderItem: ({item: T, i: number}) => ReactElement;
+  renderItem: ({item, i}: {item: T; i: number}) => ReactElement;
   LoadingView?: React.ComponentType<any> | React.ReactElement | null;
-  ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
+  ListHeaderComponent?: React.ReactNode | null;
   ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
   ListFooterComponent?: React.ComponentType<any> | React.ReactElement | null;
   ListHeaderComponentStyle?: StyleProp<ViewStyle>;
@@ -30,6 +31,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
   keyExtractor?: ((item: T | any, index: number) => string) | undefined;
+  refreshControlProps?: Omit<RefreshControlProps, 'onRefresh' | 'refreshing'>;
 }
 
 const isCloseToBottom = (
@@ -69,6 +71,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     removeClippedSubviews = false,
     keyExtractor,
     refreshControl = true,
+    refreshControlProps,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -89,6 +92,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
               onRefresh?.();
               setIsRefreshing(false);
             }}
+            {...refreshControlProps}
           />
         ) : null
       }
@@ -102,56 +106,58 @@ function MasonryList<T>(props: Props<T>): ReactElement {
         onScroll?.(e);
       }}
     >
-      <View style={ListHeaderComponentStyle}>{ListHeaderComponent}</View>
-      {data.length === 0 && ListEmptyComponent ? (
-        React.isValidElement(ListEmptyComponent) ? (
-          ListEmptyComponent
+      <>
+        <View style={ListHeaderComponentStyle}>{ListHeaderComponent}</View>
+        {data.length === 0 && ListEmptyComponent ? (
+          React.isValidElement(ListEmptyComponent) ? (
+            ListEmptyComponent
+          ) : (
+            <ListEmptyComponent />
+          )
         ) : (
-          <ListEmptyComponent />
-        )
-      ) : (
-        <View
-          style={[
-            {
-              flex: 1,
-              flexDirection: horizontal ? 'column' : 'row',
-            },
-            style,
-          ]}
-        >
-          {Array.from(Array(numColumns), (_, num) => {
-            return (
-              <View
-                key={`masonry-column-${num}`}
-                style={{
-                  flex: 1 / numColumns,
-                  flexDirection: horizontal ? 'row' : 'column',
-                }}
-              >
-                {data
-                  .map((el, i) => {
-                    if (i % numColumns === num) {
-                      return (
-                        <View
-                          key={
-                            keyExtractor?.(el, i) || `masonry-row-${num}-${i}`
-                          }
-                        >
-                          {renderItem({item: el, i})}
-                        </View>
-                      );
-                    }
+          <View
+            style={[
+              {
+                flex: 1,
+                flexDirection: horizontal ? 'column' : 'row',
+              },
+              style,
+            ]}
+          >
+            {Array.from(Array(numColumns), (_, num) => {
+              return (
+                <View
+                  key={`masonry-column-${num}`}
+                  style={{
+                    flex: 1 / numColumns,
+                    flexDirection: horizontal ? 'row' : 'column',
+                  }}
+                >
+                  {data
+                    .map((el, i) => {
+                      if (i % numColumns === num) {
+                        return (
+                          <View
+                            key={
+                              keyExtractor?.(el, i) || `masonry-row-${num}-${i}`
+                            }
+                          >
+                            {renderItem({item: el, i})}
+                          </View>
+                        );
+                      }
 
-                    return null;
-                  })
-                  .filter((e) => !!e)}
-              </View>
-            );
-          })}
-        </View>
-      )}
-      {loading && LoadingView}
-      {ListFooterComponent}
+                      return null;
+                    })
+                    .filter((e) => !!e)}
+                </View>
+              );
+            })}
+          </View>
+        )}
+        {loading && LoadingView}
+        {ListFooterComponent}
+      </>
     </ScrollView>
   );
 }
