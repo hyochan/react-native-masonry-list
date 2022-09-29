@@ -3,7 +3,7 @@
 exports[`Rendering should render without crashing 1`] = `
 <RCTScrollView
   data={
-    Array [
+    [
       1,
       2,
       3,
@@ -27,8 +27,8 @@ exports[`Rendering should render without crashing 1`] = `
   renderItem={[Function]}
   scrollEventThrottle={16}
   style={
-    Array [
-      Object {
+    [
+      {
         "alignSelf": "stretch",
         "flex": 1,
       },
@@ -41,8 +41,8 @@ exports[`Rendering should render without crashing 1`] = `
     <View />
     <View
       style={
-        Array [
-          Object {
+        [
+          {
             "flex": 1,
             "flexDirection": "row",
           },
@@ -52,7 +52,7 @@ exports[`Rendering should render without crashing 1`] = `
     >
       <View
         style={
-          Object {
+          {
             "flex": 0.5,
             "flexDirection": "column",
           }
@@ -76,7 +76,7 @@ exports[`Rendering should render without crashing 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "flex": 0.5,
             "flexDirection": "column",
           }
