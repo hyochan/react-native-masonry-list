@@ -1,5 +1,6 @@
 import {
   NativeScrollEvent,
+  Omit,
   RefreshControl,
   RefreshControlProps,
   ScrollView,
@@ -20,7 +21,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   onEndReachedThreshold?: number;
   style?: StyleProp<ViewStyle>;
   data: T[];
-  renderItem: ({item: T, i: number}) => ReactElement;
+  renderItem: ({item, i}: {item: T; i: number}) => ReactElement;
   LoadingView?: React.ComponentType<any> | React.ReactElement | null;
   ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
   ListEmptyComponent?: React.ComponentType<any> | React.ReactElement | null;
@@ -30,6 +31,7 @@ interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   containerStyle?: StyleProp<ViewStyle>;
   numColumns?: number;
   keyExtractor?: ((item: T | any, index: number) => string) | undefined;
+  refreshControlProps?: Omit<RefreshControlProps, 'onRefresh' | 'refreshing'>;
 }
 
 const isCloseToBottom = (
@@ -69,6 +71,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     removeClippedSubviews = false,
     keyExtractor,
     refreshControl = true,
+    refreshControlProps,
   } = props;
 
   const {style, ...propsWithoutStyle} = props;
@@ -89,6 +92,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
               onRefresh?.();
               setIsRefreshing(false);
             }}
+            {...refreshControlProps}
           />
         ) : null
       }
