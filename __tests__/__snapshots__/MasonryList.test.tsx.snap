@@ -16,6 +16,7 @@ exports[`Rendering should render without crashing 1`] = `
       10,
     ]
   }
+  keyboardShouldPersistTaps="handled"
   onScroll={[Function]}
   refreshControl={
     <RefreshControlMock

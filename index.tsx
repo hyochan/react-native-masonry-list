@@ -70,6 +70,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
     onScroll,
     removeClippedSubviews = false,
     keyExtractor,
+    keyboardShouldPersistTaps = 'handled',
     refreshControl = true,
     refreshControlProps,
   } = props;
@@ -82,6 +83,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
       ref={innerRef}
       style={[{flex: 1, alignSelf: 'stretch'}, containerStyle]}
       contentContainerStyle={contentContainerStyle}
+      keyboardShouldPersistTaps={keyboardShouldPersistTaps}
       removeClippedSubviews={removeClippedSubviews}
       refreshControl={
         refreshControl ? (
