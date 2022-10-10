@@ -1,15 +1,14 @@
-import {
+import type {
   NativeScrollEvent,
   Omit,
-  RefreshControl,
   RefreshControlProps,
-  ScrollView,
   ScrollViewProps,
   StyleProp,
-  View,
   ViewStyle,
 } from 'react-native';
-import React, {MutableRefObject, ReactElement, memo, useState} from 'react';
+import {RefreshControl, ScrollView, View} from 'react-native';
+import type {MutableRefObject, ReactElement} from 'react';
+import React, {memo, useState} from 'react';
 
 interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   innerRef?: MutableRefObject<ScrollView | undefined>;

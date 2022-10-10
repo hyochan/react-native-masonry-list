@@ -1,5 +1,7 @@
-import React, {ReactElement} from 'react';
-import {RenderAPI, fireEvent, render} from '@testing-library/react-native';
+import type {ReactElement} from 'react';
+import React from 'react';
+import type {RenderAPI} from '@testing-library/react-native';
+import {fireEvent, render} from '@testing-library/react-native';
 import {Text, View} from 'react-native';
 
 import Template from '../';
