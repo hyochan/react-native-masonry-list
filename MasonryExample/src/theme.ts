@@ -1,4 +1,4 @@
-import {DoobooTheme} from 'dooboo-ui';
+import type {DoobooTheme} from 'dooboo-ui';
 
 export const colors = {
   success: '#00BA90',

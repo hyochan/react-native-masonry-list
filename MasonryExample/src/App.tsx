@@ -1,15 +1,15 @@
+// eslint-disable-next-line @typescript-eslint/no-use-before-define
+import type {FC, ReactElement} from 'react';
 import {
   Image,
   SafeAreaView,
   StatusBar,
-  StyleProp,
   Text,
   View,
-  ViewStyle,
   useColorScheme,
 } from 'react-native';
-// eslint-disable-next-line @typescript-eslint/no-use-before-define
-import React, {FC, ReactElement, useMemo} from 'react';
+import React, {useMemo} from 'react';
+import type {StyleProp, ViewStyle} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import MasonryList from '@react-native-seoul/masonry-list';
@@ -205,13 +205,7 @@ const App: FC = () => {
     flex: 1,
   };
 
-  const renderItem = ({
-    item,
-    i,
-  }: {
-    item: Furniture;
-    i: number;
-  }): ReactElement => {
+  const renderItem = ({item, i}): ReactElement => {
     return (
       <FurnitureCard item={item} style={{marginLeft: i % 2 === 0 ? 0 : 12}} />
     );
