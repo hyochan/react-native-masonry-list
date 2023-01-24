@@ -221,6 +221,7 @@ const App: FC = () => {
           paddingHorizontal: 24,
           alignSelf: 'stretch',
         }}
+        onEndReached={() => console.log('onEndReached')}
         numColumns={2}
         data={data}
         renderItem={renderItem}
