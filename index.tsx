@@ -1,14 +1,13 @@
 import type {
   NativeScrollEvent,
-  Omit,
   RefreshControlProps,
   ScrollViewProps,
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import {RefreshControl, ScrollView, View} from 'react-native';
 import type {MutableRefObject, ReactElement} from 'react';
 import React, {memo, useState} from 'react';
+import {RefreshControl, ScrollView, View} from 'react-native';
 
 interface Props<T> extends Omit<ScrollViewProps, 'refreshControl'> {
   innerRef?: MutableRefObject<ScrollView | undefined>;
@@ -113,6 +112,7 @@ function MasonryList<T>(props: Props<T>): ReactElement {
           React.isValidElement(ListEmptyComponent) ? (
             ListEmptyComponent
           ) : (
+            // @ts-ignore
             <ListEmptyComponent />
           )
         ) : (

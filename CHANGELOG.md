@@ -1,3 +1,7 @@
+## 1.2.2
+* Fix type warning in RN 71.8+
+  - Resolve [#55](https://github.com/hyochan/react-native-masonry-list/issues/55)
+
 ## 1.2.1
 * Fix `keyExtractor` types.
 
