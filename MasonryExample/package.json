@@ -27,7 +27,7 @@
     "@expo/vector-icons": "^13.0.0",
     "@react-native-async-storage/async-storage": "~1.17.10",
     "@react-native-masked-view/masked-view": "0.2.7",
-    "@react-native-seoul/masonry-list": "^1.4.0",
+    "@react-native-seoul/masonry-list": "^1.4.2",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/core": "^6.4.0",
     "@react-navigation/material-top-tabs": "^6.2.4",
