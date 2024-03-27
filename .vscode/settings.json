@@ -6,7 +6,8 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

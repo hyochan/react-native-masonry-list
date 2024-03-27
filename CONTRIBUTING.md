@@ -41,7 +41,8 @@ Please follow the Coding conventions as much as possible when contributing your 
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -79,14 +80,15 @@ General styles
 
 - Space before `(` and after `)`.
 
-*** Important ***
+***Important***
+
 - testID should be written in `kebab-case`
   `testID = "my-test-id"`
 - Class name should be a `PascalCase`
 - Enum type should be a `PascalCase`
 - Constants should be written in `UPPER_SNAKE_CASE`
-   * Note that this is for `number`, `string` and constant `array`.
-   * Unformed data type like object or class variable should be written in `camelCase`.
+  - Note that this is for `number`, `string` and constant `array`.
+  - Unformed data type like object or class variable should be written in `camelCase`.
 - Variables and functions should be written in `camelCase`
 - Assets name should be written in `lower_snake_case`
   `const imgUrl = 'assets/icons/icon_add.png'`
@@ -102,7 +104,7 @@ General styles
 
   you can use
 
-  ```
+  ```js
   // prettier-ignore
   ```
 
@@ -111,9 +113,13 @@ General styles
   ![fixes](https://i.imgur.com/x3bL5kf.png)
 
 ## Test Code
+
 Hackatalk uses [Jest](https://jestjs.io/) to write test codes for both client & server.
+
 ### Client Testing
+
 #### Testing Library
+
 Client test codes are written with `@testing-library/react-native`.
 
 If you are not familiar with the library, check out its [documentation](https://callstack.github.io/react-native-testing-library/).
@@ -125,6 +131,7 @@ Here are a few rules especially important in Hackatalk test codes.
    `waitFor` retries an assertion until it passes or until timeout.
    Therefore, an empty `waitFor` call does nothing but run one tick of the event loop.
    Put single explicit assertion inside `waitFor`.
+
    ```tsx
    // Wrong.
    await waitFor(() => {});
@@ -150,3 +157,25 @@ Here are a few rules especially important in Hackatalk test codes.
      ...
    });
    ```
+
+## Example Project
+
+The example project is in [MasonaryExample](./MasonryExample)
+
+>[!NOTE]
+>Example project doesn't support hot reload for development. It should be declare core project dependencies manually in `package.json`.
+
+Run with example.
+
+1. Install
+
+```shell
+yarn install
+```
+
+2. Run Android or iOS with Expo Go
+
+```shell
+yarn ios
+yarn android
+```
