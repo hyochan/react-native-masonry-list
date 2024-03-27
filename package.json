@@ -31,7 +31,6 @@
     "dooboolab-welcome": "^1.3.2"
   },
   "peerDependencies": {
-    "expo": "*",
     "react": ">=16.9",
     "react-native": ">=0.58"
   },
