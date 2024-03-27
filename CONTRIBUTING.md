@@ -41,7 +41,8 @@ Please follow the Coding conventions as much as possible when contributing your 
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
