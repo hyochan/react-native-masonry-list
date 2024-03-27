@@ -156,3 +156,25 @@ Here are a few rules especially important in Hackatalk test codes.
      ...
    });
    ```
+
+## Example Project
+
+The example project is in [MasonaryExample](./MasonryExample)
+
+>[!NOTE]
+>Example project doesn't support hot reload for development. It should be declare core project dependencies manually in `package.json`.
+
+Run with example.
+
+1. Install
+
+```shell
+yarn install
+```
+
+2. Run Android or iOS with Expo Go
+
+```shell
+yarn ios
+yarn android
+```
