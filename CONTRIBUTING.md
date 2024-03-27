@@ -103,7 +103,7 @@ General styles
 
   you can use
 
-  ```
+  ```js
   // prettier-ignore
   ```
 
